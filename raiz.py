@@ -11,6 +11,6 @@ def raiz_derivada(x):
 
 if __name__ == "__main__":
 
-    newton_raphson(raiz, raiz_derivada, 3.5, 1e-2, 100)
+    newton_raphson(raiz, raiz_derivada, 3.5, 1e-8, 10)
     secante(raiz, 2.5, 3.5, 1e-8, 10)
     secante_modificado(raiz, 3.5, 0.01, 1e-8, 10)

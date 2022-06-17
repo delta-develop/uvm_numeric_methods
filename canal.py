@@ -17,4 +17,5 @@ def B(y):
 
 if __name__ == "__main__":
 
-    biseccion(profundidad_critica, 0.5, 2.5, 1e-4, 100, 10)
+    resultado = biseccion(profundidad_critica, 0.5, 2.5, 1e-4, 100, 10)
+    print(f"\nLa profundidad crítica es de {resultado} metros.\n")

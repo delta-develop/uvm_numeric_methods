@@ -1,7 +1,7 @@
 from math import pi
 
 from codigo.metodos_numericos import biseccion, regula, newton_raphson, secante
-from codigo.ayudas import (
+from codigo.ayudas.funciones import (
     exponencial,
     exponencial_derivada,
     polinomio,

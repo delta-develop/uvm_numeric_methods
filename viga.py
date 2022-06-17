@@ -7,4 +7,5 @@ def funcion_viga(x):
 
 if __name__ == "__main__":
 
-    biseccion(funcion_viga, 6.0, 10.0, 1e-2, 100, 7)
+    respuesta = biseccion(funcion_viga, 6.0, 10.0, 1e-2, 100, 7)
+    print(f"\n No hay momento en x = {respuesta} pies. \n")
