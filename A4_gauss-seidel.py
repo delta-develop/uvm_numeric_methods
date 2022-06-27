@@ -13,23 +13,24 @@ from codigo.metodos_numericos.gauss_seidel import GaussSeidel
 """
 
 A = [
-    [4, 1, 2],
-    [3, 5, 1],
-    [1, 1, 3],
+    [10, -1, 2],
+    [-1, 11, -1],
+    [2, -1, 10],
 ]
-b = [4, 7, 3]
+b = [6, 25, -11]
 x0 = [0, 0, 0]
-TOL = 1e-5
-MAX = 50
+TOL = 1e-10
+MAX = 100
 
 print("Matriz A:")
 imprimir_matriz(A)
 
-print("Vector b:")
+print("\nVector b:")
 print(b)
 
-print("aproximación inicial x0:")
+print("\nAproximación inicial x0:")
 print(x0)
 
 print("\n Iteración de Gauss-Seidel: \n")
-GaussSeidel(A, b, x0, TOL, MAX)
+resultado = GaussSeidel(A, b, x0, TOL, MAX)
+print(f"Solución: {resultado}")

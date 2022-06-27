@@ -12,16 +12,17 @@ def Jacobi(A, b, x0, TOL, MAX):
         for i in range(n):
             if abs(A[i][i]) <= 1e-15:
                 print("Imposible iterar")
-                return None
+                return
             s = sum([A[i][j] * x0[j] for j in range(n) if j != i])
             x[i] = (b[i] - s) / A[i][i]
-        #  x[i] = round(x[i], 5)
         print(f"Iteración {k}: {x}")
+
         if distinf(x, x0) < TOL:
             print("Solución encontrada")
             return x
         k += 1
+
         for i in range(n):
             x0[i] = x[i]
     print("Iteraciones agotadas")
-    return None
+    return

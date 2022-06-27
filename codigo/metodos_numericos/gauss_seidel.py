@@ -11,17 +11,18 @@ def GaussSeidel(A, b, x0, TOL, MAX):
         for i in range(n):
             if abs(A[i][i]) <= 1e-15:
                 print("Imposible iterar")
-                return None
+                return
             s1 = sum([A[i][j] * x[j] for j in range(i)])
             s2 = sum([A[i][j] * x0[j] for j in range(i + 1, n)])
-            x[i] = (b[i] - s1 - s2) / A[i][i]
-            x[i] = round(x[i], 6)
+            x[i] = (b[i] - float(s1) - float(s2)) / float(A[i][i])
         print(f"Iteración {k}: {x}")
+
         if distinf(x, x0) < TOL:
-            print("Solución encontrada")
+            print("Solución encontrada\n")
             return x
         k += 1
+
         for i in range(n):
             x0[i] = x[i]
     print("Iteraciones agotadas")
-    return None
+    return
