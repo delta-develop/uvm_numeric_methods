@@ -1,5 +1,5 @@
 # Método de Jacobi
-from codigo.ayudas.utilidades import actividad_4
+from codigo.ayudas.utilidades import resolver_sistema_ecuaciones
 from codigo.metodos_numericos.gauss_seidel import GaussSeidel
 from codigo.metodos_numericos.jacobi import Jacobi
 
@@ -34,14 +34,14 @@ x0 = [0, 0, 0]
 MAX = 1000
 
 TOL = 1e-10
-actividad_4(Jacobi, A_1, b_1, x0, TOL, MAX)
+resolver_sistema_ecuaciones(Jacobi, A_1, b_1, x0, TOL, MAX)
 x0 = [0, 0, 0]  # Reiniciamos el vector
 TOL = 1e-4
-actividad_4(Jacobi, A_2, b_2, x0, TOL, MAX)
+resolver_sistema_ecuaciones(Jacobi, A_2, b_2, x0, TOL, MAX)
 x0 = [0, 0, 0]  # Reiniciamos el vector
 
 TOL = 1e-10
-actividad_4(GaussSeidel, A_1, b_1, x0, TOL, MAX)
+resolver_sistema_ecuaciones(GaussSeidel, A_1, b_1, x0, TOL, MAX)
 x0 = [0, 0, 0]  # Reiniciamos el vector
 TOL = 1e-4
-actividad_4(GaussSeidel, A_2, b_2, x0, TOL, MAX)
+resolver_sistema_ecuaciones(GaussSeidel, A_2, b_2, x0, TOL, MAX)

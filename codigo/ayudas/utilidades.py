@@ -27,7 +27,7 @@ def comprobar_vector_resultado(matriz, x, b, elementos_vector):
     return vector_comprobacion
 
 
-def actividad_4(metodo_numerico, A, b, x0, tolerancia, max):
+def resolver_sistema_ecuaciones(metodo_numerico, A, b, x0, tolerancia, max):
     """Realiza todas las operaciones de cálculos e impresión para el
     método numérico elegido
 
@@ -54,4 +54,4 @@ def actividad_4(metodo_numerico, A, b, x0, tolerancia, max):
 
     print(f"\nComprobación: \nVector b = {b} \nProducto Ax = {vector_comprobacion}\n")
     diferencias = [abs(x - y) for (x, y) in zip(b, vector_comprobacion)]
-    print(f"Diferencias: {diferencias}")
+    print(f"Diferencias: {diferencias}\n")
