@@ -15,14 +15,14 @@ def Jacobi(A, b, x0, TOL, MAX):
                 return
             s = sum([A[i][j] * x0[j] for j in range(n) if j != i])
             x[i] = (b[i] - s) / A[i][i]
-        print(f"Iteración {k}: {x}")
+        # print(f"Iteración {k}: {x}")
 
         if distinf(x, x0) < TOL:
-            print("Solución encontrada")
+            print(f"Solución encontrada después de {k} iteraciones")
             return x
         k += 1
 
         for i in range(n):
             x0[i] = x[i]
     print("Iteraciones agotadas")
-    return
+    return x

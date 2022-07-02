@@ -15,10 +15,10 @@ def GaussSeidel(A, b, x0, TOL, MAX):
             s1 = sum([A[i][j] * x[j] for j in range(i)])
             s2 = sum([A[i][j] * x0[j] for j in range(i + 1, n)])
             x[i] = (b[i] - float(s1) - float(s2)) / float(A[i][i])
-        print(f"Iteración {k}: {x}")
+        # print(f"Iteración {k}: {x}")
 
         if distinf(x, x0) < TOL:
-            print("Solución encontrada\n")
+            print(f"Solución encontrada después de {k} iteraciones\n")
             return x
         k += 1
 
