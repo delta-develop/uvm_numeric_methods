@@ -14,15 +14,16 @@ def simpson_1_3(fx, a, b, tramos):
         xi = xi + 2 * h
 
     # SALIDA
-    print("tramos:", tramos)
+    print("\n Simpson 1/3 \n")
+    print("Segmentos:", tramos)
     print("Integral: ", area)
+    print("\n")
 
-    graficacion(fx, a, b, tramos)
 
-
-def graficacion(fx, a, b, tramos):
+def graficacion(f, a, b, tramos):
     muestras = tramos + 1
     xi = np.linspace(a, b, muestras)
+    fx = np.vectorize(f)
     fi = fx(xi)
 
     linea_muestras = tramos * 10 + 1

@@ -9,4 +9,4 @@ from .funciones import (
     trigonometrica_2_derivada,
     trigonometrica_3,
 )
-from .utilidades import imprimir
+from .utilidades import imprimir, graficacion_gaussiana, graficacion

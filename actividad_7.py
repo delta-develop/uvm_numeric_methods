@@ -5,19 +5,47 @@ from codigo.metodos_numericos import (
     cuadratura_gaussiana,
     romberg,
 )
-import math
+from codigo.ayudas.utilidades import graficacion, graficacion_gaussiana
+from math import e, exp, sin, sqrt, cos
 
 
-def fx(x):
-    return np.sqrt(x) * np.sin(x)
+def fx1(x):
+    return sqrt(x) * sin(x)
 
 
 def fx2(x):
-    return np.sqrt(x) * -np.sin(x)
+    return x * sin(4 * x)
 
 
-trapecio(fx, 2, 8, 8, graficacion=False)
-# simpson_1_3(fx,2,8,8)
-# cuadratura_gaussiana(fx,2,8,8)
-fx = lambda x: math.exp(x)
-romberg(fx, 0, 1, 8, 0.001)
+print("Función 1 a 4 tramos")
+
+trapecio(fx1, 0, 2, 4)
+simpson_1_3(fx1, 0, 2, 4)
+cuadratura_gaussiana(fx1, 0, 2, 4)
+romberg(fx1, 0, 2, 4, 0.001)
+
+graficacion(fx1, 0, 2, 4)
+
+print("Función 1 a 64 tramos")
+
+trapecio(fx1, 0, 2, 64)
+simpson_1_3(fx1, 0, 2, 64)
+cuadratura_gaussiana(fx1, 0, 2, 64)
+romberg(fx1, 0, 2, 64, 0.001)
+
+graficacion(fx1, 0, 2, 64)
+print("Función 2 a 4 tramos")
+
+trapecio(fx2, 0, 4, 4)
+simpson_1_3(fx2, 0, 4, 4)
+cuadratura_gaussiana(fx2, 0, 4, 4)
+romberg(fx2, 0, 4, 4, 0.001)
+
+graficacion(fx1, 0, 4, 4)
+print("Función 2 a 64 tramos")
+
+trapecio(fx2, 0, 4, 64)
+simpson_1_3(fx2, 0, 4, 64)
+cuadratura_gaussiana(fx2, 0, 4, 64)
+romberg(fx2, 0, 4, 64, 0.001)
+graficacion(fx1, 0, 4, 64)

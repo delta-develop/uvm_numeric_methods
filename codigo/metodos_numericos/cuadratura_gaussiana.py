@@ -23,10 +23,12 @@ def cuadratura_gaussiana(fx, a, b, tramos):
     for i in range(0, muestras - 1, 1):
         deltaA = integraCuadGauss2p(fx, xi[i], xi[i + 1])
         area = area + deltaA
-    # SALIDA
-    print("Integral: ", area)
 
-    graficacion(fx, a, b, tramos)
+    # SALIDA
+    print("\n Cuadratura Gaussiana \n")
+    print("Segmentos:", tramos)
+    print("Integral: ", area)
+    print("\n")
 
 
 def graficacion(fx, a, b, tramos):

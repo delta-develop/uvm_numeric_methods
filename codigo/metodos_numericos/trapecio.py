@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def trapecio(fx, a, b, tramos, graficacion=False):
+def trapecio(fx, a, b, tramos, graficacion=True):
     h = (b - a) / tramos
     xi = a
     suma = fx(xi)
@@ -16,15 +16,19 @@ def trapecio(fx, a, b, tramos, graficacion=False):
     area = h * (suma / 2)
 
     if graficacion:
-        print(f"El área bajo la curva es {area} u^2 para {tramos} tramos")
-        graficacion(fx, a, b, tramos)
+        # SALIDA
+        print("\n Trapecio \n")
+        print("Segmentos:", tramos)
+        print("Integral: ", area)
+        print("\n")
 
     return area
 
 
-def graficacion(fx, a, b, tramos):
+def graficacion(f, a, b, tramos):
     muestras = tramos + 1
     xi = np.linspace(a, b, muestras)
+    fx = np.vectorize(f)
     fi = fx(xi)
 
     linea_muestras = tramos * 10 + 1
