@@ -16,6 +16,9 @@ def fx1(x):
 def fx2(x):
     return x * sin(4 * x)
 
+def fx3(x):
+    return np.exp(x**2)
+
 
 print("Función 1 a 4 tramos")
 

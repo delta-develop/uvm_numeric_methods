@@ -3,7 +3,6 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-
 plt.style.use("ggplot")
 
 from codigo.metodos_numericos.lagrange import LagrangePol,LagrangeFx
