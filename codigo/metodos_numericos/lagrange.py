@@ -1,5 +1,5 @@
 # Método de Lagrange
-
+import sympy as sym
 
 def LagrangePol(datos):
     def f_Lagrange(k, x):
@@ -21,3 +21,30 @@ def LagrangePol(datos):
         return lag
 
     return P
+
+# f(x)
+def LagrangeFx(datos):
+    
+    X = sym.Symbol('x')
+    
+    def f_Lagrange_Expresion(k):
+        num = 1
+        den = 1
+        for i, p in enumerate(datos):
+            if i != k:
+                num = num*(X-p[0])
+                den = den*(datos[k][0] - p[0])
+        expreT=num/den
+        
+        return expreT
+    
+    def F():
+        
+        polinomio = 0
+        for k, p in enumerate(datos):
+            polinomio= polinomio+p[1]*f_Lagrange_Expresion(k)
+            
+    
+        return polinomio.expand()
+    
+    return F

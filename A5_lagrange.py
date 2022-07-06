@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 plt.style.use("ggplot")
 
-from codigo.metodos_numericos.lagrange import LagrangePol
+from codigo.metodos_numericos.lagrange import LagrangePol,LagrangeFx
 
 
 """
@@ -34,6 +34,13 @@ Pf = LagrangePol(Datos)
 Pf_t10 = Pf(t)
 print("\n\n El valor del polinomio de Lagrange en t = 10:")
 print(" {0:.8f}".format(Pf_t10))
+
+#Obtener polinomio
+Px = LagrangeFx(Datos)
+Px= Px();
+
+print("\n\n Polinomio f(x):")
+print("\n",Px)
 
 # se agrega el nuevo valor para t=10 a Datos
 Datos.append((t, Pf_t10))
