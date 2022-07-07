@@ -25,7 +25,7 @@ def romberg(fx, a, b, tramos, error):
             )
 
         ea = abs((I[1, i + 1] - I[2, i]) / I[1, i + 1]) * 100
-        et = abs((1.71828 - I[1, i + 1]) / 1.7182) * 100
+       # et = abs((1.71828 - I[1, i + 1]) / 1.7182) * 100
 
         print("%f \t %f" % (i, I[1, i + 1]))
         i += 1
